@@ -30,13 +30,8 @@ namespace tabuleiro
         {
             return pecas[pos.linha, pos.coluna];
         }
-
-        public bool existePeca(Posicao pos)
-        {
-            validarPosicao(pos);
-            return peca(pos) != null;
-        }
-
+        
+   
         public bool posicaoValida(Posicao pos)
         {
             if(pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)
@@ -53,6 +48,12 @@ namespace tabuleiro
             {
                 throw new TabuleiroException("posição inválida!");
             }
+        }
+
+        public bool existePeca(Posicao pos)
+        {
+            validarPosicao(pos);
+            return peca(pos) != null;
         }
 
         public void colocarPeca(Peca p, Posicao pos)
